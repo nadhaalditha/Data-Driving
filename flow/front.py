@@ -1,7 +1,10 @@
 import os.path
-from flask import Flask, request, Response
+import io as io
 
-def check_os_platform():
+from flask import Flask, request, Response
+import json
+
+def check_os_platform(timeout, press):
     import platform
     return platform.system()
     face_cascade = cv2.CascadeClassifier(folder_path + 'face_detect_cascade.xml')
@@ -15,3 +18,5 @@ def check_os_platform():
     cv2.imwrite((folder_path + new_image), img)
     
     return json.dumps(new_image)
+
+control_flow[x] = check_os_platform(0,0)
